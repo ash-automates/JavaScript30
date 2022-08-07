@@ -55,10 +55,14 @@
 
     console.log(findByID);
 
-    // Array.prototype.findIndex()
-    // Find the comment with this ID
-    // delete the comment with the ID of 823423
+    // Array.prototype.findIndex() // Find & delete the comment with the ID
+    comments.splice(comments.findIndex(function (comment) {
+      if (comment['id'] === 823423) {
+        return true;
+      }
+    }), 1);
 
+    console.table(comments);
   </script>
 </body>
 
